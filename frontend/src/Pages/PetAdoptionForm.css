@@ -1,0 +1,250 @@
+.adoption-page {
+  font-family: Arial, sans-serif;
+  /* padding: 20px; */
+}
+
+.navbar1 {
+  /* background-color: #f8b400; */
+  /* padding: 20px; */
+  text-align: left;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("/images/back.jpeg");
+  background-size: cover;
+  background-position: center;
+  /* position: relative; */
+  height: 300px;
+}
+
+.con1 {
+  flex: 1; /* Allow the text content to take up available space */
+  padding-left: 100px;
+}
+
+.pic1 {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  padding-right: 300px; /* Add padding to the right of the image */
+}
+
+.navbar1 p    {
+  color: black;
+  padding-left: 100px;
+}
+
+#h1   {
+  text-align: left;
+  padding-left: 100px;
+}
+
+#btn  {
+  height: 40px;
+  width: 150px;
+  margin-left: 100px;
+  
+}
+
+
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+  text-align: left;
+}
+
+.puppies-section {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.puppies-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.puppy-card {
+  /* border: 1px solid #ccc; */
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+.puppy-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.puppy-card button {
+  margin-top: 10px;
+  padding: 10px;
+  
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+.why-choose-us {
+  margin: 30px 0;
+  /* padding-left: 100px; */
+}
+
+.content-wrapper {
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Align items vertically centered */
+  justify-content: space-between; /* Space out items to the edges */
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto; /* Center the content wrapper within its container */
+  padding-left:  200px; /* Add some horizontal padding */
+}
+
+.content-image {
+  width: 400px; /* Adjust the width of the image */
+  height: 430px; /* Adjust the height of the image */
+  border-radius: 10%; /* Circular image */
+  object-fit: cover; /* Ensure the image covers the area evenly */
+}
+
+.content1 {
+  flex: 1; /* Take up remaining space on the right side */
+  margin-left: 200px; /* Add space between the image and content */
+}
+
+.content1 h2 {
+  text-align: left; /* Align heading to the left */
+  margin-bottom: 20px; /* Space between heading and list */
+}
+
+.content1 ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.content1 li {
+  margin: 10px 0; /* Add spacing between list items */
+}
+
+button  {
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5%;
+  border: none;
+}
+
+button:hover {
+  background-color: green;
+}
+
+
+#p6, #p7  {
+  font-size: 12px;
+  margin-left: 25px;
+ }
+
+
+
+
+.adoption-process {
+  margin: 30px 0;
+  padding-left: 100px;
+}
+
+.content-wrapper {
+  display: flex; /* Align items horizontally */
+  align-items: flex-start; /* Align items vertically at the start */
+  justify-content: space-between; /* Space out items to the edges */
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto; /* Center the content wrapper within its container */
+  padding: 0 20px; /* Add some horizontal padding */
+}
+
+.content {
+  flex: 1; /* Take up space on the left side */
+  margin-right: 40px; /* Space between content and button */
+}
+
+.content h2 {
+  text-align: left; /* Align heading to the left */
+  margin-bottom: 20px; /* Space between heading and list */
+}
+
+.content ul {
+  list-style-type: disc; /* Use default bullet points */
+  padding-left: 20px; /* Add padding to align bullets */
+  margin: 0; /* Remove default margin */
+}
+
+.content li {
+  margin: 10px 0; /* Add spacing between list items */
+}
+
+.adoption-process .process-and-pic {
+  display: flex; /* Enable flexbox to align elements side by side */
+  align-items: flex-start; /* Align the items at the start of the container */
+}
+
+.adoption-process ul {
+  margin-right: 20px; /* Add some space between the list and the image */
+}
+
+#adoption-process #pic {
+  margin-left: 10px;
+}
+
+#btn2 {
+  height: 40px;
+  width: 150px;
+  padding-left: 20px;
+}
+
+/* Style for the image */
+#pic img {
+  width: 350px; /* Set the maximum width of the image */
+  height: 380px; /* Maintain aspect ratio */
+  margin-left: 300px;
+}
+
+
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 30px;
+}
+
+#row  {
+  justify-content: flex-start;
+}
+
+@media (max-width:768px) {
+  #row  {
+    flex-direction: row;
+  }
+  
+}
+
+
+#img11  {
+  height: 400px;
+  width: 500px;
+}
+
+
+.success-message {
+  color: green;
+  font-weight: bold;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}

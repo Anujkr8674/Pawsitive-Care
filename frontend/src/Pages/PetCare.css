@@ -1,0 +1,262 @@
+/* General Styles */
+.pet-care-page {
+  font-family: Arial, sans-serif;
+  /* padding: 20px; */
+}
+
+/* Navbar */
+/* .navbar {
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 1rem;
+} */
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  background-color: white;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/bgDog.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 350px;
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  color:#ffbf00f1;
+}
+.header-section p{
+color:white;
+}
+
+.appointment-btn1 {
+  background-color: #6e45e2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 190px;
+}
+
+.appointment-btn1:hover {
+  background-color: #0a8f37;
+}
+
+/* Services Section */
+.services-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.service-item {
+  background-color: #fff;
+  padding: 20px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Team Section */
+.team-section {
+  text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.expert {
+  padding: 20px;
+}
+
+.team-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-item img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.team-item p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.appointment-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: hsl(213, 39%, 49%);
+  color: white;
+  border: none;
+  border-radius: 13px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 80%;
+}
+
+.appointment-btn:hover {
+  background-color: #45a049;
+}
+
+/* Hover Effect */
+.team-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Shop Section */
+.shop-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.shop-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.shop-item {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.shop-item img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.shop-item p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.shop-item span {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.add-to-cart-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+  background-color: green;
+}
+
+.View-More {
+  background-color: #6e45e2;
+  height: 40px;
+  width: 200px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.View-More:hover {
+  background-color: #88d3ce;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-section {
+      height: auto;
+      padding: 40px 20px;
+  }
+
+  .header-section h1 {
+      font-size: 2rem;
+  }
+
+  .services-list, .team-list, .shop-items {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .service-item, .team-item, .shop-item {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+  }
+
+  .appointment-btn {
+      width: 100%;
+  }
+
+  .View-More {
+      width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section h1 {
+      font-size: 1.8rem;
+  }
+
+  .appointment-btn1, .View-More {
+      width: 100%;
+      padding: 10px;
+  }
+}

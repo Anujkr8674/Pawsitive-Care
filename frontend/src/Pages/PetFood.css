@@ -1,0 +1,44 @@
+.food-section {
+  text-align: center;
+  margin: 40px 0;
+}
+.food-section  h1{
+  text-align: left;
+  margin: 40px 100px;
+}
+
+.food-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.food-item {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.food-item img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.food-item p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.food-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+

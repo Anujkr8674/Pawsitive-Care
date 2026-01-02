@@ -1,0 +1,73 @@
+/* Main container for the About Us page */
+.puppy1 {
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 0;
+  background-color: #fdf5e6; /* Light beige background for the text section */
+}
+
+/* Content section holding image and text */
+.puppy1-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Image container */
+.puppy1-image {
+  flex: 1;
+  max-width: 50%; /* Takes up half the screen width */
+  padding-right: 20px;
+}
+
+.dogs-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Text container */
+.puppy1-text {
+  flex: 1;
+  max-width: 50%; /* Takes up half the screen width */
+  padding: 20px;
+  background-color: #faf3e0; /* Light beige background */
+  border-radius: 8px;
+}
+
+/* Heading for the section */
+.puppy1-title {
+  font-size: 36px;
+  color: #f6993f; /* Orange color for the title */
+  margin-bottom: 20px;
+}
+
+/* Description text */
+.puppy1-description {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .puppy1-content {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .puppy1-image, .puppy1-text {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .puppy1-title {
+    font-size: 28px;
+  }
+
+  .puppy1-description {
+    font-size: 16px;
+  }
+}

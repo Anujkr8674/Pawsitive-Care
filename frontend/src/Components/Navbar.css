@@ -1,0 +1,493 @@
+.navbar {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  background: linear-gradient(135deg, #6e45e2, #88d3ce); 
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  position: sticky; /* or remove the 'position' line */
+  /* width: 100%; */
+  z-index: 1000;
+  background-color: #333;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 1.3rem;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links li a, .navbar-links li span {
+  text-decoration: none;
+  color: #050000;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links li a.active,
+.navbar-links li span.active {
+  color: yellow;
+  font-weight: bold;
+}
+
+.navbar-links li a:hover, .navbar-links li span:hover {
+  color: yellow;
+  transform: scale(1.05);
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+}
+
+.dropdown-menu li {
+  padding: 0.5rem 0;
+}
+
+.dropdown-menu li a {
+  color: #050000;
+}
+
+.dropdown-menu li a:hover {
+  color: #9a124d;
+}
+
+/* Navbar Icons */
+.navbar-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-icons span {
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-icons span:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .navbar-links.show {
+    display: flex;
+    position: relative;
+  }
+
+  .navbar-links li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .navbar-icons {
+    margin-top: 1rem;
+  }
+
+  .user-dropdown-menu {
+    right: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hamburger  {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+
+  }
+
+}
+
+/* User Dropdown Styles */
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 1rem;
+ 
+  z-index: 1000;
+  width: 150px;
+  backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+.user-dropdown-menu li {
+  padding: 0.5rem 0;
+}
+
+.user-dropdown-menu li a {
+  color: #3419ca;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.user-dropdown-menu li a:hover {
+  color: #ffd700;
+}
+
+.user-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+
+
+/* User Dropdown Styles */
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%; /* This aligns the dropdown directly below the icon */
+  right: 0;  /* Aligns the dropdown to the right edge of the icon */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 1rem;
+  background-color: #fff; /* Ensure a clear background */
+  z-index: 1000;
+  width: 150px;
+  backdrop-filter: blur(8px);
+  color: #3419ca; /* Adjusted to the color scheme you want */
+  border-radius: 4px; /* Slightly rounded corners */
+  text-align: left; /* Align text to the left */
+}
+
+.user-dropdown-menu li {
+  padding: 0.5rem 0;
+}
+
+.user-dropdown-menu li a {
+  color: #3419ca; /* Text color for links */
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none; /* Remove underline from links */
+}
+
+.user-dropdown-menu li a:hover {
+  color: #ffd700; /* Hover color */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+/* User Icon Hover */
+.user-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+
+
+/* Existing styles... */
+
+/* User Dropdown Styles */
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  width: 150px;
+  backdrop-filter: blur(8px);
+  border-radius: 4px;
+}
+
+.user-dropdown-menu li {
+  padding: 0.5rem 0;
+}
+
+.user-dropdown-menu li a {
+  color: #3419ca;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  text-align: left;
+}
+
+.user-dropdown-menu li a:hover {
+  color: #ffd700;
+}
+
+.user-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .navbar-links.show {
+    display: flex;
+    position: relative;
+    width: -webkit-fill-available;
+  }
+
+  .navbar-links li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .navbar-icons {
+    margin-top: 1rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .user-dropdown-menu {
+    right: 10px;
+    /* position: relative; */
+    width: auto;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 988px) {
+  .hamburger {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+  }
+}
+
+
+
+
+
+.navbar-icons {
+  position: relative; 
+  display: inline-block;
+  /* width: 30%; */
+}
+
+.user-dropdown-menu {
+  position: absolute; /* Set dropdown to be absolutely positioned */
+  top: 100%; /* Position it directly below the icon */
+  left: 0; /* Align to the left of the icon */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 50px;
+  list-style: none;
+  margin: 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1000; /* Ensure it's above other elements */
+  display: none; /* Hide the dropdown initially */
+  width: fit-content;
+}
+
+ .user-icon:hover .user-dropdown-menu {
+  display: block; 
+}
+
+.user-dropdown-menu li {
+  margin: 5px 0;
+}
+
+.user-dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+}
+
+.user-dropdown-menu li a:hover {
+  color: #007bff;
+}
+
+
+
+/* User Dropdown Styles */
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  width: 150px;
+}
+
+.user-dropdown-menu li {
+  padding: 0.5rem 0;
+}
+
+.user-dropdown-menu li a {
+  color: #3419ca; /* Text color for links */
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none; /* Remove underline */
+}
+
+.user-dropdown-menu li a:hover {
+  color: #ffd700; /* Hover color */
+}
+
+
+/* Navbar Icons */
+.navbar-icons {
+  /* display: flex; */
+  gap: 1rem; /* This controls spacing between icons */
+  margin-left: auto; /* Pushes icons to the right */
+}
+
+/* Optional: Add margin to the navbar links for more space */
+.navbar-links {
+  margin-right: 2rem; /* Adjust this value as needed */
+}
+
+/* User Dropdown Styles */
+.user-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  width: 150px;
+}
+
+
+
+/* Navbar Icons */
+.navbar-icons {
+  /* display: flex; */
+  gap: 1rem; /* You can also adjust this if you want more space between all icons */
+}
+
+.user-icon {
+  margin-right: 1rem; /* Adds space specifically between the user icon and the cart icon */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.user-icon:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black; /* Change color as needed */
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.logout-button:hover {
+  text-decoration: underline;
+  background-color: rgba(255, 0, 0, 0.635);
+}
+
+
+
+
+
+
+
+#userlog {
+  font-size: 18px;
+}
+
+#userout  {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+}
+
+#userout:hover  {
+  color: red;
+}

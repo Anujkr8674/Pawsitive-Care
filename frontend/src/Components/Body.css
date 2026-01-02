@@ -1,0 +1,374 @@
+/* Hero Section */
+.hero-section {
+  background-image: url(/images/bgDog.jpg);
+  background-size: cover;
+  background-position: center; 
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  height: 100vh; 
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  color: hsl(47, 100%, 50%);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.contact-button {
+  background-color: #6041d3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 20px auto;
+  width: 120px;
+}
+
+.contact-button:hover {
+  background-color: #45a049;
+}
+
+/* Join Community Section */
+.join-community-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  flex-direction: column; 
+}
+
+.join-community-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.text-section h3 {
+  margin: 10px 0;
+}
+
+#h {
+  font-weight: 900;
+}
+
+.text-section p {
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.join-community-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: fit-content;
+  margin: 20px auto; 
+}
+
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+
+/* Services Section */
+.services-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.services-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service-item {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-item img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.service-item p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Client Testimonials Section */
+.client-testimonials-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonial-item {
+  width: 100%;
+  max-width: 300px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Review Section */
+.review-section {
+  padding: 20px;
+  /* background-color: #f9f9f9; */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px auto;
+  /* max-width: 800px; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.review-section h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.review-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.review-form button:hover {
+  background-color: #0056b3;
+}
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.review-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  margin: 0 auto;
+}
+
+.review-item:hover {
+  transform: scale(1.02);
+}
+
+#b12 {
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 60px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  width: fit-content;
+  margin: 20px auto;
+  display: block;
+}
+
+#b12:hover  {
+  background-color: green;
+}
+
+/* Responsive Media Queries */
+@media (min-width: 768px) {
+  .join-community-section {
+    flex-direction: row;
+  }
+
+  .join-community-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .services-list {
+    flex-direction: row;
+  }
+
+  .testimonials-list {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .reviews-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .hero-section {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .review-item {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .contact-button,
+  .join-community-button {
+    width: auto;
+  }
+
+  .service-item img {
+    height: 200px;
+    width: 200px;
+  }
+
+  .review-form {
+    max-width: 600px;
+  }
+
+  .review-item {
+    max-width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 50px 10px;
+    height: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .contact-button {
+    width: 100px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 30px 5px;
+    height: auto;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .contact-button {
+    width: 80px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+
+
+.review-item {
+  max-height: 150px; /* Set a reasonable max height */
+  overflow: hidden;  /* Hide overflowing content */
+  margin-bottom: 20px; /* Space between reviews */
+  padding: 10px;
+  border: 1px solid #ddd; /* Optional: add border */
+  position: relative;
+  transition: max-height 0.3s ease; /* Smooth transition */
+}
+
+.review-item.expanded {
+  max-height: none; /* Allow expanded messages to show fully */
+}
+
+.read-more {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1em;
+  font-family: inherit;
+  position: absolute;
+  bottom: 10px; /* Position at the bottom of the review item */
+  right: 10px; /* Adjust position as needed */
+}
+
+.read-more:hover {
+  text-decoration: none;
+}

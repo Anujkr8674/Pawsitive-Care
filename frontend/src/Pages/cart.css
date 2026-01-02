@@ -1,0 +1,120 @@
+.cart-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.cart-item-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  gap: 20px;
+}
+
+.quantity-control button {
+  padding: 5px 10px;
+  margin: 0 10px; /* Reduced the margin for better spacing */
+  font-size: 16px;
+}
+
+.remove-button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.cart-total {
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#head {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Smaller devices (tablets and mobile phones) */
+@media screen and (max-width: 768px) {
+  .cart-page {
+    padding: 15px;
+  }
+
+  .cart-item {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+  }
+
+  .cart-item-image {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10px; /* Space between image and details */
+  }
+
+  .cart-item-details {
+    width: 100%; /* Make the details take up full width */
+  }
+
+  .quantity-control {
+    margin: 5px 0; /* Reduce margin for quantity control */
+  }
+
+  .quantity-control button {
+    margin: 0 5px; /* Adjust button spacing */
+    font-size: 14px;
+  }
+
+  .remove-button {
+    margin-top: 10px; /* Space between details and button */
+    padding: 6px 12px;
+  }
+
+  .cart-total {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+}
+
+/* Extra small devices (phones) */
+@media screen and (max-width: 480px) {
+  .cart-item-image {
+    width: -webkit-fill-available;
+        height: -webkit-fill-available;
+  }
+
+  .cart-item-details p {
+    font-size: 14px;
+  }
+
+  .quantity-control button {
+    font-size: 12px;
+  }
+
+  .cart-total {
+    font-size: 16px;
+  }
+}

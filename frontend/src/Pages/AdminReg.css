@@ -1,0 +1,117 @@
+.adminRegUniqueContainer {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* background: rgba(0, 0, 0, 0.6); Semi-transparent background */
+    backdrop-filter: blur(8px) !important; /* Blurs the background */
+    z-index: 1000 ; /* Ensures it is above other content */
+    
+}
+
+
+.back1 {
+    /* background: rgba(0, 0, 0, 0.6); Semi-transparent background */
+    backdrop-filter: blur(8px) !important; /* Blurs the background */
+    z-index: 1000 ; /* Ensures it is above other content */
+
+}
+
+.adminRegUniqueHeading {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.adminRegUniqueError {
+    color: red;
+    text-align: center;
+}
+
+.adminRegUniqueSuccess {
+    color: green;
+    text-align: center;
+}
+
+.adminRegUniqueForm {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.adminRegUniqueField {
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.adminRegUniqueField label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.adminRegUniqueField input {
+    width: 80%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.adminRegUniqueButton {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adminRegUniqueButton:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    .adminRegUniqueContainer {
+        padding: 15px;
+    }
+
+    .adminRegUniqueButton {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+
+#new1   {
+    margin-left: 90%;
+    width: fit-content;
+    height: fit-content;
+}
+
+
+#otp1   {
+    #otp {
+        background-color: transparent; /* No background color */
+        color: #1849ecb9; /* Change to your preferred text color */
+        border: none; /* Remove border */
+        cursor: pointer; /* Change cursor on hover */
+        /* margin-left: 10px;  */
+        font-size: 14px; /* Font size */
+        width: fit-content;
+      }
+      
+      /* Optional: Add hover effect */
+      #otp:hover {
+        text-decoration: underline; /* Underline on hover for better UX */
+      }
+}

@@ -1,0 +1,151 @@
+/* General container styles */
+.donations-container {
+    max-width: 90%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header section */
+.donations-header {
+    background-image: url('/images/bgDog.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 8px;
+}
+
+/* Headings */
+.donations-container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.donations-container h3 {
+    margin-top: 30px;
+    font-size: 2rem;
+    text-align: left;
+}
+
+/* Paragraphs */
+.donations-container p {
+    margin-bottom: 20px;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 10px;
+}
+
+/* Donation button styles */
+.donate-button {
+    background-color: #077d3a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin: 20px auto;
+    display: block;
+    width: auto;
+    max-width: 150px;
+    text-align: center;
+}
+
+.donate-button:hover {
+    background-color: green;
+}
+
+/* Table styles */
+.expenses-table, .donations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    font-size: 1rem;
+    overflow-x: auto;
+}
+
+.expenses-table th, .donations-table th,
+.expenses-table td, .donations-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.expenses-table th, .donations-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.total-row td {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.expenses-table td:nth-child(2), .donations-table td:nth-child(2),
+.expenses-table td:nth-child(3), .donations-table td:nth-child(3) {
+    text-align: right;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .donations-container h1 {
+        font-size: 2rem;
+    }
+
+    .donations-container h3 {
+        font-size: 1.75rem;
+    }
+
+    .donations-container p {
+        font-size: 1rem;
+    }
+
+    .donate-button {
+        width: auto;
+        max-width: 140px;
+        font-size: 0.875rem;
+    }
+
+    .expenses-table, .donations-table {
+        font-size: 0.875rem;
+    }
+
+    .donations-header {
+        padding: 40px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .donations-container h1 {
+        font-size: 1.75rem;
+    }
+
+    .donations-container h3 {
+        font-size: 1.5rem;
+    }
+
+    .donations-container p {
+        font-size: 0.875rem;
+    }
+
+    .donate-button {
+        width: auto;
+        max-width: 120px;
+        font-size: 0.75rem;
+    }
+
+    .expenses-table, .donations-table {
+        font-size: 0.75rem;
+    }
+
+    .donations-header {
+        padding: 30px 10px;
+    }
+}

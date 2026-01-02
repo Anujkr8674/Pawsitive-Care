@@ -1,0 +1,591 @@
+.about-us-container {
+  font-family: Arial, sans-serif;
+}
+
+.about-section {
+  /* padding: 40px; */
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  /* max-width: 100%; */
+  height: auto;
+}
+
+.about-text {
+  font-size: 18px;
+  margin: 15px 0;
+      /* max-width: 900px; */
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    color: #333;
+    padding: 60px 12px;
+    font-weight: 400;
+    /* width: 500px; */
+}
+
+.about-text1 {
+  font-size: 18px;
+  margin: 15px 0;
+      /* max-width: 900px; */
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    color: #333;
+    /* padding: 60px 12px; */
+    font-weight: 400;
+}
+
+.founder-section {
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.founder-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder-image {
+  width: 30%;
+  height: 30%;
+  /* border-radius: 50%; */
+}
+
+.founder-text {
+  max-width: 600px;
+  margin-left: 20px;
+  font-size: 22px;
+  line-height: 139.9%;
+  color: #333;
+  font-weight: 500;
+  margin-top: 130px;
+}
+
+.founder-name{
+  /* border-left: 3px solid #FF9944; */
+  /* padding-left: 12px !important; */
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.founder-name span:first-child  {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 139.4%;
+  color: #333;
+}
+
+.founder-name span  {
+  display: inline-block;
+  width: 100%;
+  font-size: 18px;
+  line-height: 139.4%;
+  color: #f94;
+}
+
+.leadership-section {
+  /* padding: 40px; */
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.leadership-team {
+  display: flex;
+  justify-content: space-between;
+  /* gap: 20px; */
+}
+
+
+.aboutcon {
+  width: initial;
+  background: radial-gradient(34.87% 51.22% at 50% 47.45%, #fff, #fffaf2 100% 100%);
+  /* padding: 36px 90px; */
+  border-bottom: 15px solid #FF9944;
+  font-size: 20px;
+  line-height: 139.9%;
+  text-align: center;
+  color:black;
+  font-weight: 500;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+}
+
+.hi-section {
+  /* padding: 40px; */
+  /* background-color: #ffefe0; */
+  text-align: center;
+}
+
+.hi-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+.hi-image {
+  width: auto;
+  /* margin-right: 20px; */
+  height: auto;
+}
+
+.hi-subheading  {
+  font-size: 20px;
+  line-height: 130.4%;
+  font-weight: 500;
+  letter-spacing: -.025em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.hi-subheading1 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 25px;
+  color: #333;
+  font-weight: 400;
+}
+
+.head {
+  font-size: 20px;
+  line-height: 130.4%;
+  font-weight: 800;
+  letter-spacing: -.025em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.huft-foundation-section {
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.foundation-btn {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.mission-section {
+  /* padding: 40px;
+  background-color: #f9f9f9;
+  text-align: center; */
+
+  /* padding: 40px; */
+  /* background-image: url("/frontend/public/about/about1.png"); */
+  background-image: url('/images/about5.png');
+  background-size: cover;
+  background-position: bottom;
+  /* color: #fff; Ensure the text is visible over the image */
+  text-align: center;
+  /* position: relative; */
+  height: auto;
+  width: auto;
+}
+
+.mission-stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stat-item {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.vision-section {
+  padding: 40px;
+  /* background-color: #ffefe0; */
+  text-align: center;
+}
+
+/* .values-section {
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+} */
+.values-team  {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.values-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.value-item {
+  max-width: 300px;
+  text-align: center;
+}
+
+.value-item h3 {
+  color: #ff6600;
+}
+
+.values-member h3 {
+  color: #ff6600;
+
+}
+
+.values-member  {
+  text-align: center;
+  width: min-content;
+}
+
+.values-member img  {
+  height: 150px;
+  width: 150px;
+}
+
+.values-name  {
+  width: 160px;
+}
+
+
+
+.about1-section {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  /* justify-content: space-evenly; */
+  background-color: #f7f1e3;
+  /* padding: 40px; */
+  position: relative;
+  gap: 150px;
+}
+
+.about1-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+}
+
+.about1-image {
+  flex: 1;
+}
+
+.dogs-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.about1-text {
+  flex: 1;
+  padding: 30px;
+}
+
+.foundation-title, .leadership-heading, .hi-heading, .vision-heading,.mission-heading, .values-heading {
+  color: #ff7f27;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.foundation-description {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.know-more-btn {
+  margin-top: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.know-more-btn:hover {
+  background-color: #555;
+}
+
+.cats-image-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.cats-image {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.vision-text  {
+  line-height: 30px;
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.vision-text1 {
+  font-size: 17px;
+  line-height: 25px;
+  color: #333;
+  font-weight: 400;
+  margin: 0;
+}
+
+.orange {
+  color: #F94;
+}
+.white  {
+  color: white;
+}
+
+.mission-description  {
+  line-height: 38px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+
+
+/* General Styling for the About Us Page */
+.about-us-container {
+  font-family: Arial, sans-serif;
+}
+
+.about-section, .founder-section, .leadership-section, .mission-section, .vision-section, .hi-section, .huft-foundation-section {
+  /* padding: 40px; */
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.about-text,  .vision-text, .mission-description, .hi-subheading, .hi-subheading1 {
+  color: #333;
+  font-size: 22px;
+  /* line-height: 1.6; */
+  text-align: center;
+  border-bottom: #F94;
+}
+
+.foundation-description {
+  width: 100%;
+}
+
+.border {
+  color: #F94;
+
+}
+
+/* About Image */
+.about-image, .dogs-image, .hi-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.cats-image-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.cats-image {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Founder Section */
+.founder-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.founder-image {
+  width: 80%;
+  height: 80%;
+}
+
+.founder-text {
+  max-width: 600px;
+  margin-left: 20px;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Name Styling */
+.founder-name, .values-name {
+  font-weight: 500;
+}
+
+.founder-name span:first-child {
+  font-weight: 700;
+  font-size: 24px;
+  color: #333;
+}
+
+.founder-name span {
+  color: #f94;
+}
+
+/* Leadership Section */
+.leadership-team {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+}
+
+/* Mission Section */
+
+
+.mission-description {
+  font-size: 30px;
+  line-height: 38px;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Value Section */
+.values-team, .hi-content {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.values-member {
+  text-align: center;
+  width: fit-content;
+}
+
+.values-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.values-name, .vision-text {
+  font-weight: 500;
+  line-height: 1.5;
+  padding-left: 30px;
+}
+
+
+
+
+
+
+
+/* Button Styling */
+.foundation-btn, .know-more-btn {
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.know-more-btn:hover {
+  background-color: #555;
+}
+
+/* Typography Styling */
+.foundation-title, .leadership-heading, .hi-heading, .vision-heading, .mission-heading, .values-heading {
+  color: #ff7f27;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.orange {
+  color: #f94;
+}
+
+.white {
+  color: #fff;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .founder-content, .hi-content, .leadership-team, .values-team {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .leadership-heading, .foundation-title, .values-heading{
+    font-size: 24px;
+  }
+  .about1-content {
+    flex-direction: column;
+  }
+
+  .founder-text {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .team-member img, .values-member img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about1-text{
+    padding: 9px;
+  }
+
+  .values-team {
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

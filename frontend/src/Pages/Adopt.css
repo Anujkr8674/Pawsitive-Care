@@ -1,0 +1,241 @@
+.adoption-page {
+  font-family: Arial, sans-serif;
+  /* padding: 20px; */
+}
+
+.navbar1 {
+  text-align: left;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-image: url("/images/bgDog.jpg");
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  width: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.con11 {
+  flex: 1;
+  padding: 0;
+  width: 100%;
+  /* text-align: center; */
+}
+
+#h9 {
+  color: #fbd84b;
+  font-size: 2rem;
+  margin: 0;
+}
+
+#btn5 {
+  height: 40px;
+  width: 150px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#btn:hover {
+  background-color: #45a049;
+}
+
+.Ashop-section h2 {
+  text-align: center;
+  color: #914bfb;
+  margin-bottom: 20px;
+}
+
+.Ashop-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Ashop-item {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 200px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.Ashop-item img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.Ashop-item p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.Ashop-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.view, .view1, .view2 {
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+}
+
+.view {
+  background-color: #4CAF50;
+  font-size: 16px;
+  width: 150px;
+}
+
+.view1 {
+  background-color: #6e45e2;
+  height: 40px;
+  width: 100px;
+  /* margin-top: 25px; */
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.view2 {
+  background-color: #6e45e2;
+  height: 40px;
+  width: 200px;
+}
+
+.view1:hover {
+  background-color: #88d3ce;
+}
+
+.Adoption-Process, .why-choose-us {
+  padding: 20px;
+}
+
+.Adoption-Process h1, .why-choose-us h1 {
+  color: #914bfb;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.content-wrapper, .content-wrapper1, .content-wrapper3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.content2, .content3 {
+  flex: 1;
+  margin: 20px;
+}
+
+.content-image, .content-image1 {
+  width:auto ;
+  height: auto;
+  object-fit: cover;
+}
+
+.content1 h1, .content2 h1 {
+  margin-bottom: 20px;
+}
+
+.content1 ul, .content2 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.content1 li  {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.content2 li{
+  align-items: flex-start;
+}
+
+.content1 li svg, .content2 li svg {
+  margin-right: 8px;
+  color: #ffc800;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: green;
+}
+
+.p20 {
+  margin: 5px 0 10px 38px;
+  font-size: 14px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  #h9 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .navbar1 {
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #btn {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .content-wrapper1, .content-wrapper3 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-image1 {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+
+  #pic1 {
+    height: auto;
+    width: auto;
+  }
+
+  .content1, .content2 {
+    /* text-align: center; */
+    margin: 0 20px;
+  }
+
+  .Ashop-items {
+    justify-content: center;
+  }
+}
+
+
+#why  {
+  text-align: justify;
+}

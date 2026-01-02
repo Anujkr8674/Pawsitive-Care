@@ -1,0 +1,107 @@
+/* Background Blur and Centering the Login Form */
+.login-container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  backdrop-filter: blur(8px); /* Blurs the background */
+  z-index: 1000; /* Ensures it is above other content */
+}
+
+/* Styling the Login Form */
+.login-form11 {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-form11 h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Aligning labels and input fields */
+.form-group11 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group11 h4 {
+  margin: 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group11 input {
+  width: 70%; /* Adjust width as needed */
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Button Styling */
+.login-button,
+.back-button1 {  /* Apply same styles to both .login-button and .back-button1 */
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #6e45e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.back-button1:hover {
+  background-color: #5642d8;
+}
+
+/* Custom widths for specific buttons */
+#create {
+  width: 90px;
+  font-size: 10px;
+  height: 30px;
+}
+
+#forgot {
+  width: fit-content;
+  font-size: 10px;
+  height: 30px;
+  background-color: transparent;
+  color: blue;
+}
+
+#forgot:hover {
+  text-decoration: underline;
+}
+
+h6 button {
+  margin-left: 10px;
+}
+
+/* Remove position styles for .back-button1 */
+#back11 {
+  width: fit-content;
+  width: fit-content;
+  background-color: transparent;
+  color: #333;
+  font-weight: 700;
+  font-size: 25px;
+  padding: initial;
+}

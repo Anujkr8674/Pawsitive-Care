@@ -1,0 +1,240 @@
+/* General Styles */
+.street-animal-page {
+  font-family: Arial, sans-serif;
+  /* padding: 20px; */
+}
+
+.header-section1 {
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+  position: relative;
+  background-image: url('/images/bgDog.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  max-width: 100%;
+}
+
+.header-section1 h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fbea49;
+}
+
+.adopt-btn-header, .donate-btn-header {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  width: 150px;
+}
+
+.adopt-btn-header {
+  background-color: #fbd84b;
+  color: white;
+}
+
+.adopt-btn-header:hover {
+  background-color: #88d3ce;
+}
+
+.donate-btn-header {
+  background-color: #069a28;
+  color: white;
+}
+
+.header-paragraph {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+/* Services Section */
+.services-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.service-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: 20px;
+  flex: 1;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+
+.service-card img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.feature-box, .impact-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.feature-image, .impact-image {
+  height: 300px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+.impact-image {
+  width: 50%;
+  height: auto;
+}
+
+.feature-text, .impact-text {
+  text-align: justify;
+  padding: 20px;
+  flex: 1;
+}
+
+.feature-text h2, .impact-text h2 {
+  font-size: 1.75rem;
+}
+
+.impact-text p {
+  font-size: 1.15rem;
+  margin-bottom: 20px;
+}
+
+.about-btn, .impact-btn {
+  background-color: #ff9f1c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.about-btn:hover, .impact-btn:hover {
+  background-color: #ffbe76;
+}
+
+/* Adoption Section */
+.adoption-section {
+  background-color: #fff;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.adoption-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.text-section {
+  flex: 1;
+  text-align: left;
+}
+
+.image-section1 img {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header-section1 {
+      padding: 60px 20px;
+  }
+
+  .header-section1 h1 {
+      font-size: 2rem;
+  }
+
+  .adopt-btn-header, .donate-btn-header {
+      width: 120px;
+      font-size: 14px;
+  }
+
+  .services-section {
+      margin: 20px 0;
+  }
+
+  .service-card {
+      max-width: 100%;
+  }
+
+  .feature-box, .impact-box {
+      flex-direction: column;
+  }
+
+  .feature-image, .impact-image {
+      width: 100%;
+      height: auto;
+  }
+
+  .feature-text, .impact-text {
+      padding: 10px;
+  }
+
+  .feature-text h2, .impact-text h2 {
+      font-size: 1.5rem;
+  }
+
+  .impact-text p {
+      font-size: 1rem;
+  }
+
+  .adoption-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .text-section, .image-section1 {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section1 h1 {
+      font-size: 1.8rem;
+  }
+
+  .adopt-btn-header, .donate-btn-header {
+      width: 100px;
+      font-size: 12px;
+  }
+
+  .service-card img {
+      height: 150px;
+      width: 150px;
+  }
+
+  .feature-text h2, .impact-text h2 {
+      font-size: 1.25rem;
+  }
+
+  .impact-text p {
+      font-size: 0.9rem;
+  }
+}
