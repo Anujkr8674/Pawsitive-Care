@@ -72,7 +72,7 @@ exports.sendOtp = async (req, res) => {
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: 'Welcome to Pawsitive Care! Here's Your OTP Code',
+      subject: "Welcome to Pawsitive Care! Here's Your OTP Code",
       html: `
         <p>Hi there!</p>
         <p>Thank you for joining the Pawsitive Care community – where we prioritize the happiness and well-being of your beloved pets! To complete your registration and get started, please use the One-Time Password (OTP) provided below:</p>
