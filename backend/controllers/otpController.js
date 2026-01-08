@@ -17,16 +17,37 @@ try {
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.error('EMAIL_USER or EMAIL_PASS environment variables are not set');
   } else {
+    // Use explicit Gmail SMTP settings for better compatibility with Render
     transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false, // true for 465, false for other ports
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
-      // Add timeout settings
-      connectionTimeout: 10000, // 10 seconds
-      greetingTimeout: 10000,
-      socketTimeout: 10000,
+      // Increased timeout settings for Render's network
+      connectionTimeout: 60000, // 60 seconds
+      greetingTimeout: 30000, // 30 seconds
+      socketTimeout: 60000, // 60 seconds
+      // Additional settings for better reliability
+      tls: {
+        rejectUnauthorized: false, // Allow self-signed certificates
+        minVersion: 'TLSv1.2'
+      },
+      // Retry settings
+      pool: true,
+      maxConnections: 1,
+      maxMessages: 3,
+    });
+    
+    // Verify transporter configuration
+    transporter.verify(function(error, success) {
+      if (error) {
+        console.error('SMTP connection error:', error);
+      } else {
+        console.log('SMTP server is ready to send messages');
+      }
     });
   }
 } catch (error) {
@@ -84,11 +105,17 @@ exports.sendOtp = async (req, res) => {
       `,
     };
 
-    // Send email with promise and timeout
+    // Send email with promise and increased timeout for Render
     const sendEmailPromise = new Promise((resolve, reject) => {
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.error('Error sending email:', error);
+          console.error('Error details:', {
+            code: error.code,
+            command: error.command,
+            response: error.response,
+            responseCode: error.responseCode
+          });
           reject(error);
         } else {
           console.log('Email sent successfully:', info.messageId);
@@ -97,11 +124,11 @@ exports.sendOtp = async (req, res) => {
       });
     });
 
-    // Add timeout to email sending (15 seconds)
+    // Increased timeout to 60 seconds for Render's network
     const timeoutPromise = new Promise((_, reject) => {
       setTimeout(() => {
         reject(new Error('Email sending timeout'));
-      }, 15000);
+      }, 60000); // 60 seconds
     });
 
     // Race between email sending and timeout
@@ -119,9 +146,19 @@ exports.sendOtp = async (req, res) => {
       }
     });
 
-    // Return appropriate error message
+    // Return appropriate error message based on error type
     if (error.message === 'Email sending timeout') {
       return res.status(500).json({ message: 'Email service timeout. Please try again.' });
+    }
+    
+    if (error.code === 'ETIMEDOUT' || error.code === 'ECONNREFUSED') {
+      console.error('Connection error - Check EMAIL_USER and EMAIL_PASS in Render environment variables');
+      return res.status(500).json({ message: 'Email service connection failed. Please check server configuration.' });
+    }
+    
+    if (error.code === 'EAUTH') {
+      console.error('Authentication error - Check Gmail App Password');
+      return res.status(500).json({ message: 'Email authentication failed. Please check email credentials.' });
     }
     
     return res.status(500).json({ message: 'Error sending OTP. Please try again later.' });
