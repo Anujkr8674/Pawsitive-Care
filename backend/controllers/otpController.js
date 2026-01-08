@@ -17,11 +17,12 @@ try {
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     console.error('EMAIL_USER or EMAIL_PASS environment variables are not set');
   } else {
-    // Use explicit Gmail SMTP settings for better compatibility with Render
+    // Try port 465 (SSL) first - more reliable on Render
+    // If this doesn't work, consider using SendGrid or Mailgun
     transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      port: 465, // Changed to 465 (SSL) - more reliable on Render
+      secure: true, // true for 465, false for other ports
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -39,6 +40,9 @@ try {
       pool: true,
       maxConnections: 1,
       maxMessages: 3,
+      // Additional options for better connection
+      requireTLS: true,
+      debug: false, // Set to true for debugging
     });
     
     // Verify transporter configuration
