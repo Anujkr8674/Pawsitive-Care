@@ -8,7 +8,7 @@ const router = express.Router();
 // router.post('/verify-otp', verifyOtp);
 
 router.post('/forgot-send-otp', forgotSendOtp);
-router.post('/verify-otp',verifyotp);
+router.post('/forgot-verify-otp', verifyotp); // Changed to match frontend
 router.post('/forgot-reset-password', forgotResetPassword);
 
 module.exports = router;
