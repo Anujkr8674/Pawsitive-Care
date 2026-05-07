@@ -92,97 +92,130 @@
 
 
 
-const nodemailer = require('nodemailer');
-const otpGenerator = require('otp-generator');
-const bcrypt = require('bcrypt');
-const AdminReg = require('../models/AdminReg');
-let otpStore = {}; // Temporary store for OTPs
+const EMAIL_USER = process.env.EMAIL_USER?.trim();
+const EMAIL_PASS = process.env.EMAIL_PASS?.replace(/\s+/g, '').trim();
+const OTP_LIFETIME_MS = 5 * 60 * 1000; // 5 minutes
 
-// Set up the nodemailer transporter
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Your email
-    pass: process.env.EMAIL_PASS, // Your email password
+    user: EMAIL_USER,
+    pass: EMAIL_PASS,
   },
 });
 
-// Send OTP for forgot password
-exports.adminforgotSendOtp = (req, res) => {  // Updated function name
-  const { email } = req.body;
-
-  // Generate OTP
-  const otp = otpGenerator.generate(6, { digits: true, upperCaseAlphabets: false, specialChars: false, lowerCaseAlphabets: false });
-  otpStore[email] = otp;
-
-  // Email options
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: email,
-    // subject: 'Reset Your Pawsitive Care Password – OTP Code Inside',
-    // html: `<p>Your OTP code is ${otp}</p>`,
-
-    subject: 'Reset Your Pawsitive Care Admin Password – OTP Code Inside',
-    html: `
-      <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #dddddd; border-radius: 10px;">
-        <h2 style="color: #333;">Admin Password Reset Request</h2>
-        <p>Dear Admin,</p>
-        <p>We received a request to reset the password for your Pawsitive Care admin account. Please use the One-Time Password (OTP) provided below to reset your password:</p>
-        <div style="padding: 10px; text-align: center; border: 2px dashed #ff6347; background-color: #f9f9f9; width: fit-content; margin: auto;">
-          <span style="font-size: 22px; font-weight: bold; color: #ff6347;">${otp}</span>
-        </div>
-        <p style="color: #777;">This OTP is valid for a limited time, so be sure to enter it soon to complete your password reset process.</p>
-        <p>If you did not request this reset, please ignore this email or contact our support team to secure your account.</p>
-        <p>Warm regards,</p>
-        <p><strong>Pawsitive Care Team</strong></p>
-        <p style="font-size: 14px; color: #999;">If you have any issues or questions, feel free to <a href="[Your support URL]" style="color: #ff6347; text-decoration: none;">contact our support team</a>.</p>
-        <p style="font-size: 12px; color: #bbb; border-top: 1px solid #ddd; padding-top: 10px;">&copy; ${new Date().getFullYear()} Pawsitive Care. All rights reserved.</p>
-      </div>
-    `,
-  };
-
-  // Send the OTP email
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.status(500).json({ message: 'Error sending OTP' });
-    }
-    res.status(200).json({ message: 'OTP sent successfully for password reset' });
-  });
-};
-
-// Verify OTP
-exports.adminverifyotp = (req, res) => {  // Updated function name
-  const { email, otp } = req.body;
-
-  // Check if OTP matches the one stored
-  if (otpStore[email] === otp) {
-    res.status(200).json({ message: 'OTP verified successfully' });
+transporter.verify((error, success) => {
+  if (error) {
+    console.error('Nodemailer transporter verification failed:', error);
   } else {
-    res.status(400).json({ message: 'Invalid OTP' });
+    console.log('Nodemailer transporter is ready to send emails');
+  }
+});
+
+function normalizeEmail(email) {
+  return String(email || '').trim().toLowerCase();
+}
+
+exports.adminforgotSendOtp = async (req, res) => {
+  const email = normalizeEmail(req.body.email);
+  if (!email) {
+    return res.status(400).json({ message: 'Email is required' });
+  }
+
+  try {
+    const admin = await AdminReg.findOne({ email });
+    if (!admin) {
+      return res.status(404).json({ message: 'Admin account not found' });
+    }
+
+    const otp = otpGenerator.generate(6, {
+      digits: true,
+      upperCaseAlphabets: false,
+      specialChars: false,
+      lowerCaseAlphabets: false,
+    });
+
+    otpStore[email] = {
+      otp,
+      expiresAt: Date.now() + OTP_LIFETIME_MS,
+    };
+
+    const mailOptions = {
+      from: EMAIL_USER,
+      to: email,
+      subject: 'Reset Your Pawsitive Care Admin Password – OTP Code Inside',
+      html: `
+        <div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #dddddd; border-radius: 10px;">
+          <h2 style="color: #333;">Admin Password Reset Request</h2>
+          <p>Dear Admin,</p>
+          <p>We received a request to reset the password for your Pawsitive Care admin account. Please use the One-Time Password (OTP) provided below to reset your password:</p>
+          <div style="padding: 10px; text-align: center; border: 2px dashed #ff6347; background-color: #f9f9f9; width: fit-content; margin: auto;">
+            <span style="font-size: 22px; font-weight: bold; color: #ff6347;">${otp}</span>
+          </div>
+          <p style="color: #777;">This OTP is valid for a limited time, so be sure to enter it soon to complete your password reset process.</p>
+          <p>If you did not request this reset, please ignore this email or contact our support team to secure your account.</p>
+          <p>Warm regards,</p>
+          <p><strong>Pawsitive Care Team</strong></p>
+          <p style="font-size: 14px; color: #999;">If you have any issues or questions, feel free to <a href="[Your support URL]" style="color: #ff6347; text-decoration: none;">contact our support team</a>.</p>
+          <p style="font-size: 12px; color: #bbb; border-top: 1px solid #ddd; padding-top: 10px;">&copy; ${new Date().getFullYear()} Pawsitive Care. All rights reserved.</p>
+        </div>
+      `,
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.error('OTP send error:', error);
+        return res.status(500).json({ message: 'Error sending OTP', error: error.message });
+      }
+      res.status(200).json({ message: 'OTP sent successfully for password reset' });
+    });
+  } catch (error) {
+    console.error('Admin forgot OTP error:', error);
+    res.status(500).json({ message: 'Server error sending OTP', error: error.message });
   }
 };
 
-// Reset password
-exports.adminforgotResetPassword = async (req, res) => {  // Updated function name
-  const { email, otp, newPassword } = req.body;
+exports.adminverifyotp = (req, res) => {
+  const email = normalizeEmail(req.body.email);
+  const otp = String(req.body.otp || '').trim();
 
-  // Check if OTP is valid
-  if (otpStore[email] === otp) {
-    delete otpStore[email]; // Clear OTP after verification
+  if (!email || !otp) {
+    return res.status(400).json({ message: 'Email and OTP are required' });
+  }
 
-    try {
-      // Hash the new password before saving it to the database
-      const hashedPassword = await bcrypt.hash(newPassword, 10);
+  const record = otpStore[email];
+  if (!record || record.expiresAt < Date.now() || record.otp !== otp) {
+    return res.status(400).json({ message: 'Invalid or expired OTP' });
+  }
 
-      // Update the admin's password in the database
-      await AdminReg.findOneAndUpdate({ email }, { password: hashedPassword });
+  res.status(200).json({ message: 'OTP verified successfully' });
+};
 
-      res.status(200).json({ message: 'Password reset successfully' });
-    } catch (error) {
-      console.error('Error resetting password:', error);
-      res.status(500).json({ message: 'Error resetting password' });
+exports.adminforgotResetPassword = async (req, res) => {
+  const email = normalizeEmail(req.body.email);
+  const otp = String(req.body.otp || '').trim();
+  const newPassword = String(req.body.newPassword || '').trim();
+
+  if (!email || !otp || !newPassword) {
+    return res.status(400).json({ message: 'Email, OTP, and new password are required' });
+  }
+
+  const record = otpStore[email];
+  if (!record || record.expiresAt < Date.now() || record.otp !== otp) {
+    return res.status(400).json({ message: 'Invalid or expired OTP' });
+  }
+
+  delete otpStore[email];
+
+  try {
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    const admin = await AdminReg.findOneAndUpdate({ email }, { password: hashedPassword });
+    if (!admin) {
+      return res.status(404).json({ message: 'Admin account not found' });
     }
-  } else {
-    res.status(400).json({ message: 'Invalid OTP' });
+    res.status(200).json({ message: 'Password reset successfully' });
+  } catch (error) {
+    console.error('Error resetting password:', error);
+    res.status(500).json({ message: 'Error resetting password', error: error.message });
   }
 };

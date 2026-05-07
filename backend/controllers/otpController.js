@@ -10,12 +10,15 @@ const validateEmail = (email) => {
   return emailRegex.test(email);
 };
 
+const EMAIL_USER = process.env.EMAIL_USER?.trim();
+const EMAIL_PASS = process.env.EMAIL_PASS?.replace(/\s+/g, '').trim();
+
 // Set up the nodemailer transporter with error handling
 let transporter;
 try {
   // Check if environment variables are set
-  if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-    console.error('EMAIL_USER or EMAIL_PASS environment variables are not set');
+  if (!EMAIL_USER || !EMAIL_PASS) {
+    console.error('EMAIL_USER or EMAIL_PASS environment variables are not set or invalid');
   } else {
     // Try port 465 (SSL) first - more reliable on Render
     // If this doesn't work, consider using SendGrid or Mailgun
@@ -24,8 +27,8 @@ try {
       port: 465, // Changed to 465 (SSL) - more reliable on Render
       secure: true, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: EMAIL_USER,
+        pass: EMAIL_PASS,
       },
       // Increased timeout settings for Render's network
       connectionTimeout: 60000, // 60 seconds
@@ -95,7 +98,7 @@ exports.sendOtp = async (req, res) => {
 
     // Email options
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: EMAIL_USER,
       to: email,
       subject: "Welcome to Pawsitive Care! Here's Your OTP Code",
       html: `
