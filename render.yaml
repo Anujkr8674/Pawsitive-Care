@@ -18,5 +18,5 @@ services:
       - key: SECRET_KEY
         sync: false  # You'll need to set this manually in Render dashboard
       - key: FRONTEND_URL
-        sync: false  # Set this to your Vercel frontend URL after deployment
+        value: https://pawsitive-care-tau.vercel.app
 

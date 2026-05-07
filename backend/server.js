@@ -106,8 +106,20 @@ const SECRET_KEY = process.env.SECRET_KEY || '18e4e74072651732914140cc00ef10307e
 
 // Middleware
 // CORS Configuration - Allow requests from frontend
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'https://pawsitive-care-tau.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:5000'
+].filter(Boolean);
+
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || '*', // In production, set FRONTEND_URL to your Vercel URL
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    callback(new Error(`CORS origin denied: ${origin}`));
+  },
   credentials: true,
   optionsSuccessStatus: 200
 };

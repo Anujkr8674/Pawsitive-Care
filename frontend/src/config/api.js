@@ -2,7 +2,11 @@
 // This file centralizes all API endpoints
 // Production mein REACT_APP_API_URL environment variable se automatically set ho jayega
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const DEFAULT_API_BASE_URL = 'https://pawsitive-care-1fn5.onrender.com';
+
+const API_BASE_URL = REACT_APP_API_URL || REACT_APP_BACKEND_URL || (process.env.NODE_ENV === 'production' ? DEFAULT_API_BASE_URL : 'http://localhost:5000');
 
 export const API_ENDPOINTS = {
   // Auth endpoints

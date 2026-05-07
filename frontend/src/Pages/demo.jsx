@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_ENDPOINTS } from '../config/api';
 import './Donate.css'; 
 
 function DonationForm() {
@@ -168,7 +169,7 @@ function DonationForm() {
     try {
 
       const updatedDonationData = { ...donationData, userId };
-      const response = await fetch('http://localhost:5000/api/user/donations', {
+      const response = await fetch(API_ENDPOINTS.USER_DONATIONS, {
         method: 'POST',
         headers: {
 
