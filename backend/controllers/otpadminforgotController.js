@@ -96,6 +96,7 @@ const nodemailer = require('nodemailer');
 const otpGenerator = require('otp-generator');
 const bcrypt = require('bcrypt');
 const AdminReg = require('../models/AdminReg');
+let otpStore = {}; // Temporary store for OTPs
 
 const EMAIL_USER = process.env.EMAIL_USER?.trim();
 const EMAIL_PASS = process.env.EMAIL_PASS?.replace(/\s+/g, '').trim();
