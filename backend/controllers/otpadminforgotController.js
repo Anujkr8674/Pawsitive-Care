@@ -92,6 +92,11 @@
 
 
 
+const nodemailer = require('nodemailer');
+const otpGenerator = require('otp-generator');
+const bcrypt = require('bcrypt');
+const AdminReg = require('../models/AdminReg');
+
 const EMAIL_USER = process.env.EMAIL_USER?.trim();
 const EMAIL_PASS = process.env.EMAIL_PASS?.replace(/\s+/g, '').trim();
 const OTP_LIFETIME_MS = 5 * 60 * 1000; // 5 minutes
